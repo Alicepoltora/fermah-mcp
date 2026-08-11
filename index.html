@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Connect Claude, Cursor, Visual Studio Code, Windsurf, Codex, and other AI clients to a read-only Fermah research MCP server."
+    />
+    <meta name="theme-color" content="#080b09" />
+    <meta property="og:title" content="Fermah MCP — Give your AI a map of Fermah" />
+    <meta
+      property="og:description"
+      content="A public, read-only Streamable HTTP MCP server for Fermah documentation, product research, and project planning."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fermah.gogettest.online/" />
+    <title>Fermah MCP — Connect your AI</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23080b09%22/><path d=%22M17 46V18h12c10 0 17 5 17 14s-7 14-17 14H17Zm9-8h3c5 0 8-2 8-6s-3-6-8-6h-3v12Z%22 fill=%22%23b7ff2a%22/></svg>" />
+  </head>
+  <body data-page="landing">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Fermah MCP home">
+        <span class="brand-mark" aria-hidden="true">ƒ</span>
+        <span>Fermah MCP</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#capabilities">Capabilities</a>
+        <a href="/docs">Documentation</a>
+        <a class="nav-endpoint" href="#connect">Connect <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="connect">
+        <div class="hero-noise" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <div class="eyebrow reveal reveal-1">
+            <span class="live-dot" data-server-dot></span>
+            <span data-server-status>Public MCP endpoint</span>
+            <span class="eyebrow-divider"></span>
+            <span>Community-built · read-only</span>
+          </div>
+
+          <h1 class="reveal reveal-2">Fermah<br /><span>MCP</span></h1>
+          <p class="hero-lede reveal reveal-3">
+            Give your AI a source-linked map of Fermah—Kernel, Froben, proof systems, architecture, and build ideas.
+          </p>
+
+          <div class="endpoint reveal reveal-4" aria-label="MCP server endpoint">
+            <span class="endpoint-protocol">HTTP</span>
+            <code>https://fermah.gogettest.online/mcp</code>
+            <button class="icon-action" type="button" data-copy="https://fermah.gogettest.online/mcp" aria-label="Copy MCP endpoint">
+              <span data-copy-icon aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="client-launcher reveal reveal-5">
+            <div class="launcher-label">
+              <span>Choose your client</span>
+              <span class="detection-note" data-detection-note>Auto-selecting when detectable</span>
+            </div>
+            <div class="client-chips" data-client-chips aria-label="Choose an MCP client"></div>
+          </div>
+
+          <div class="install-panel reveal reveal-6" data-install-surface aria-live="polite"></div>
+        </div>
+
+        <div class="protocol-visual" aria-label="A diagram showing an AI client connected through MCP to Fermah sources">
+          <div class="visual-grid" aria-hidden="true"></div>
+          <svg class="protocol-lines" viewBox="0 0 760 760" role="img" aria-labelledby="protocol-title protocol-desc">
+            <title id="protocol-title">Fermah MCP connection graph</title>
+            <desc id="protocol-desc">Your AI connects to the MCP gateway, which provides source-linked Fermah documentation and planning tools.</desc>
+            <defs>
+              <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#d7ff7f" stop-opacity="0.96" />
+                <stop offset="52%" stop-color="#a7f62b" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#a7f62b" stop-opacity="0" />
+              </radialGradient>
+              <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="15" />
+              </filter>
+            </defs>
+            <g class="orbit orbit-one"><circle cx="380" cy="380" r="160" /></g>
+            <g class="orbit orbit-two"><circle cx="380" cy="380" r="260" /></g>
+            <g class="data-lines">
+              <path d="M130 176 C210 215 248 265 307 322" />
+              <path d="M626 168 C560 222 515 266 452 323" />
+              <path d="M628 594 C550 545 502 499 452 438" />
+              <path d="M128 594 C209 548 261 498 308 438" />
+            </g>
+            <g class="moving-pulses">
+              <circle class="pulse pulse-a" r="4"><animateMotion dur="3.2s" repeatCount="indefinite" path="M130 176 C210 215 248 265 307 322" /></circle>
+              <circle class="pulse pulse-b" r="4"><animateMotion dur="3.8s" repeatCount="indefinite" path="M626 168 C560 222 515 266 452 323" /></circle>
+              <circle class="pulse pulse-c" r="4"><animateMotion dur="3.5s" repeatCount="indefinite" path="M628 594 C550 545 502 499 452 438" /></circle>
+              <circle class="pulse pulse-d" r="4"><animateMotion dur="4s" repeatCount="indefinite" path="M128 594 C209 548 261 498 308 438" /></circle>
+            </g>
+            <circle class="core-halo" cx="380" cy="380" r="126" fill="url(#coreGlow)" filter="url(#softGlow)" />
+            <g class="core-node">
+              <circle cx="380" cy="380" r="82" />
+              <text x="380" y="369" text-anchor="middle">FERMAH</text>
+              <text class="core-label" x="380" y="407" text-anchor="middle">MCP</text>
+            </g>
+            <g class="satellite satellite-a" transform="translate(80 124)">
+              <circle cx="50" cy="52" r="42" />
+              <text x="50" y="49" text-anchor="middle">YOUR</text>
+              <text x="50" y="65" text-anchor="middle">AI</text>
+            </g>
+            <g class="satellite satellite-b" transform="translate(576 116)">
+              <circle cx="50" cy="52" r="42" />
+              <text x="50" y="49" text-anchor="middle">OFFICIAL</text>
+              <text x="50" y="65" text-anchor="middle">DOCS</text>
+            </g>
+            <g class="satellite satellite-c" transform="translate(578 542)">
+              <circle cx="50" cy="52" r="42" />
+              <text x="50" y="49" text-anchor="middle">FERMAH</text>
+              <text x="50" y="65" text-anchor="middle">KERNEL</text>
+            </g>
+            <g class="satellite satellite-d" transform="translate(78 542)">
+              <circle cx="50" cy="52" r="42" />
+              <text x="50" y="49" text-anchor="middle">FERMAH</text>
+              <text x="50" y="65" text-anchor="middle">FROBEN</text>
+            </g>
+          </svg>
+          <div class="visual-caption">
+            <span>STREAMABLE HTTP</span>
+            <span>TLS · READ ONLY · SOURCE LINKED</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="statement-section" id="capabilities">
+        <div class="section-kicker">One endpoint, useful context</div>
+        <h2>From “what is Fermah?”<br />to an integration blueprint.</h2>
+        <p>
+          The server turns official product pages and technical documentation into tools your AI can discover and call directly.
+        </p>
+      </section>
+
+      <section class="capability-rows" aria-label="MCP capabilities">
+        <article class="capability-row scroll-reveal">
+          <span class="row-index">01</span>
+          <div>
+            <h3>Search the map</h3>
+            <p>Find the right official page by product, architecture concept, or proof system.</p>
+          </div>
+          <code>search_fermah_docs</code>
+        </article>
+        <article class="capability-row scroll-reveal">
+          <span class="row-index">02</span>
+          <div>
+            <h3>Read the source</h3>
+            <p>Fetch allowlisted Fermah pages live, with a source URL attached to every result.</p>
+          </div>
+          <code>read_fermah_page</code>
+        </article>
+        <article class="capability-row scroll-reveal">
+          <span class="row-index">03</span>
+          <div>
+            <h3>Shape the build</h3>
+            <p>Translate a product idea into a Kernel or Froben-oriented architecture outline with explicit caveats.</p>
+          </div>
+          <code>design_fermah_project</code>
+        </article>
+      </section>
+
+      <section class="workflow-section">
+        <div class="workflow-copy scroll-reveal">
+          <div class="section-kicker">Designed for trustworthy research</div>
+          <h2>Source first.<br />Inference second.</h2>
+          <p>
+            Search summaries are labeled. Live reads stay on an allowlist of official Fermah domains. Every planning response separates known product behavior from assumptions that still need partner confirmation.
+          </p>
+          <a class="text-link" href="/docs#safety">Read the safety model <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="workflow-terminal scroll-reveal" aria-label="Example MCP workflow">
+          <div class="terminal-top"><span></span><span></span><span></span><em>agent trace</em></div>
+          <div class="terminal-body">
+            <p><span class="terminal-time">00:00.018</span> <strong>query</strong> “Can Fermah resolve a sports market?”</p>
+            <p><span class="terminal-time">00:00.041</span> <strong>call</strong> search_fermah_docs</p>
+            <p><span class="terminal-time">00:00.096</span> <strong>match</strong> Kernel · Workflow Engine · Flashcast</p>
+            <p><span class="terminal-time">00:00.112</span> <strong>call</strong> read_fermah_page</p>
+            <p><span class="terminal-time">00:00.384</span> <strong>source</strong> fermah.xyz/kernel</p>
+            <p class="terminal-success"><span class="terminal-time">00:00.401</span> <strong>ready</strong> answer with citations + caveats</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="safety-strip" aria-label="Service guarantees">
+        <div><strong>0</strong><span>write tools</span></div>
+        <div><strong>0</strong><span>API keys required</span></div>
+        <div><strong>6</strong><span>discoverable tools</span></div>
+        <div><strong>HTTPS</strong><span>Streamable transport</span></div>
+      </section>
+
+      <section class="final-cta">
+        <div class="final-orb" aria-hidden="true"></div>
+        <div class="section-kicker">Ready when your agent is</div>
+        <h2>Connect once.<br />Ask better questions.</h2>
+        <div class="final-actions">
+          <a class="primary-button" href="#connect">Choose your client <span aria-hidden="true">↗</span></a>
+          <a class="secondary-button" href="/docs">Open documentation</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true">ƒ</span><span>Fermah MCP</span></a>
+      <p>Community-built and not affiliated with or endorsed by Fermah.</p>
+      <div>
+        <a href="https://fermah.xyz/" target="_blank" rel="noreferrer">Official Fermah site</a>
+        <a href="https://docs.fermah.xyz/" target="_blank" rel="noreferrer">Official docs</a>
+        <a href="/health">Status</a>
+      </div>
+    </footer>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "fermah-mcp",
+  "version": "1.0.0",
+  "description": "A community-built remote MCP server and installation site for Fermah documentation.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k \"vite --host 127.0.0.1\" \"node --watch server/index.js\"",
+    "build": "vite build",
+    "start": "NODE_ENV=production node server/index.js",
+    "test": "node --test",
+    "test:mcp": "node test/mcp-smoke.js"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "cheerio": "1.2.0",
+    "express": "5.2.1",
+    "helmet": "8.3.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@lobehub/icons-static-svg": "1.94.0",
+    "concurrently": "10.0.4",
+    "vite": "8.2.1"
+  }
+}

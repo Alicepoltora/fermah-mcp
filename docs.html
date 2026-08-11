@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Documentation and client setup instructions for the Fermah MCP Community server."
+    />
+    <meta name="theme-color" content="#080b09" />
+    <title>Documentation — Fermah MCP</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23080b09%22/><path d=%22M17 46V18h12c10 0 17 5 17 14s-7 14-17 14H17Zm9-8h3c5 0 8-2 8-6s-3-6-8-6h-3v12Z%22 fill=%22%23b7ff2a%22/></svg>" />
+  </head>
+  <body data-page="docs">
+    <header class="topbar docs-topbar">
+      <a class="brand" href="/" aria-label="Fermah MCP home">
+        <span class="brand-mark" aria-hidden="true">ƒ</span>
+        <span>Fermah MCP</span>
+      </a>
+      <nav class="nav-links" aria-label="Documentation navigation">
+        <a href="/">Landing</a>
+        <a class="nav-endpoint" href="#quickstart">Connect <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <div class="docs-shell">
+      <aside class="docs-sidebar" aria-label="Documentation sections">
+        <div class="sidebar-label">Documentation</div>
+        <nav>
+          <a class="active" href="#overview">Overview</a>
+          <a href="#quickstart">Quickstart</a>
+          <a href="#clients">Client setup</a>
+          <a href="#tools">Tools</a>
+          <a href="#resources">Resources & prompts</a>
+          <a href="#examples">Examples</a>
+          <a href="#safety">Safety & limits</a>
+          <a href="#endpoints">HTTP endpoints</a>
+        </nav>
+        <div class="sidebar-status">
+          <span class="live-dot" data-server-dot></span>
+          <span data-server-status>Checking endpoint</span>
+        </div>
+      </aside>
+
+      <main class="docs-main">
+        <section class="docs-hero" id="overview">
+          <div class="section-kicker">Fermah MCP · v1.0</div>
+          <h1>Documentation</h1>
+          <p>
+            A public, read-only Streamable HTTP MCP server that helps AI clients research Fermah and outline possible integrations.
+          </p>
+          <div class="endpoint docs-endpoint">
+            <span class="endpoint-protocol">MCP</span>
+            <code>https://fermah.gogettest.online/mcp</code>
+            <button class="icon-action" type="button" data-copy="https://fermah.gogettest.online/mcp" aria-label="Copy MCP endpoint">
+              <span data-copy-icon aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="docs-meta">
+            <span>Transport <strong>Streamable HTTP</strong></span>
+            <span>Authentication <strong>None</strong></span>
+            <span>Access <strong>Public / read-only</strong></span>
+          </div>
+          <div class="docs-notice">
+            <strong>Community project.</strong> This server is not an official Fermah product and does not submit proofs, move assets, or execute Kernel workflows.
+          </div>
+        </section>
+
+        <section class="docs-section" id="quickstart">
+          <span class="docs-index">01</span>
+          <div class="docs-content">
+            <h2>Quickstart</h2>
+            <p>Select your client. Cursor and Visual Studio Code support direct installation links; other clients receive the shortest supported setup path.</p>
+            <div class="client-launcher docs-launcher" id="clients">
+              <div class="launcher-label">
+                <span>Client</span>
+                <span class="detection-note" data-detection-note>Auto-selecting when detectable</span>
+              </div>
+              <div class="client-chips" data-client-chips aria-label="Choose an MCP client"></div>
+            </div>
+            <div class="install-panel docs-install-panel" data-install-surface aria-live="polite"></div>
+            <p class="docs-footnote">
+              Browser user agents normally do not reveal which desktop app opened a link. Detection therefore uses an explicit <code>?client=</code> parameter, referrer when available, recognizable embedded-browser user agents, and your last selection.
+            </p>
+          </div>
+        </section>
+
+        <section class="docs-section" id="tools">
+          <span class="docs-index">02</span>
+          <div class="docs-content">
+            <h2>Tools</h2>
+            <p>Every tool is read-only and returns either official source URLs or an explicit community-content label.</p>
+            <div class="tool-list">
+              <article>
+                <code>search_fermah_docs</code>
+                <p>Search the curated index by product, architecture concept, proof system, or integration topic.</p>
+                <span>query · limit</span>
+              </article>
+              <article>
+                <code>read_fermah_page</code>
+                <p>Fetch current text from one allowlisted official Fermah page. Falls back to a labeled cached summary if the page is unavailable.</p>
+                <span>page_id</span>
+              </article>
+              <article>
+                <code>list_fermah_products</code>
+                <p>Map Kernel, Froben, Flashcast Social, and Marina with purpose, maturity caveats, and official links.</p>
+                <span>no arguments</span>
+              </article>
+              <article>
+                <code>list_supported_proof_systems</code>
+                <p>Return supported and planned proof systems recorded in the official Froben documentation.</p>
+                <span>no arguments</span>
+              </article>
+              <article>
+                <code>design_fermah_project</code>
+                <p>Create a non-binding Kernel/Froben architecture outline and a list of access assumptions to verify.</p>
+                <span>use_case · priority</span>
+              </article>
+              <article>
+                <code>get_fermah_mcp_info</code>
+                <p>Describe this server, its endpoint, transport, safety model, and supported MCP capabilities.</p>
+                <span>no arguments</span>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="resources">
+          <span class="docs-index">03</span>
+          <div class="docs-content">
+            <h2>Resources & prompts</h2>
+            <div class="definition-grid">
+              <div>
+                <span>Resource</span>
+                <code>fermah://overview</code>
+                <p>Product map and allowlisted official documentation index.</p>
+              </div>
+              <div>
+                <span>Resource</span>
+                <code>fermah://proof-systems</code>
+                <p>Supported and planned proof systems with a source link.</p>
+              </div>
+              <div>
+                <span>Prompt</span>
+                <code>evaluate-fermah-fit</code>
+                <p>A structured research workflow that compares Kernel and Froben for a proposed project.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="examples">
+          <span class="docs-index">04</span>
+          <div class="docs-content">
+            <h2>Example requests</h2>
+            <div class="example-blocks">
+              <div>
+                <span>Research</span>
+                <p>“Use Fermah MCP to explain the difference between Kernel and Froben. Cite the official pages.”</p>
+                <button type="button" data-copy="Use Fermah MCP to explain the difference between Kernel and Froben. Cite the official pages.">Copy prompt</button>
+              </div>
+              <div>
+                <span>Architecture</span>
+                <p>“Evaluate whether a parametric insurance product fits Fermah. Separate confirmed capabilities from assumptions.”</p>
+                <button type="button" data-copy="Evaluate whether a parametric insurance product fits Fermah. Separate confirmed capabilities from assumptions.">Copy prompt</button>
+              </div>
+              <div>
+                <span>Proof systems</span>
+                <p>“List the proof systems in the current Fermah documentation and open the official source before answering.”</p>
+                <button type="button" data-copy="List the proof systems in the current Fermah documentation and open the official source before answering.">Copy prompt</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="safety">
+          <span class="docs-index">05</span>
+          <div class="docs-content">
+            <h2>Safety & limitations</h2>
+            <div class="prose">
+              <h3>Read-only by design</h3>
+              <p>The server has no wallet, transaction, file-system, proof-submission, or account-management tools. It does not request API keys from users.</p>
+              <h3>Official sources are allowlisted</h3>
+              <p><code>read_fermah_page</code> accepts page IDs rather than arbitrary URLs. This prevents the tool from becoming a general-purpose fetch proxy or SSRF surface.</p>
+              <h3>Community summaries are labeled</h3>
+              <p>Search results and architecture suggestions are maintained by this project. Live page reads include the final official URL and retrieval time.</p>
+              <h3>No access guarantees</h3>
+              <p>Fermah product access, APIs, pricing, supported networks, and production SLAs may require direct confirmation with Fermah. The project-planning tool calls these assumptions out explicitly.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="endpoints">
+          <span class="docs-index">06</span>
+          <div class="docs-content">
+            <h2>HTTP endpoints</h2>
+            <div class="endpoint-table" role="table" aria-label="HTTP endpoints">
+              <div role="row"><code role="cell">POST /mcp</code><span role="cell">Initialize sessions and call MCP methods</span></div>
+              <div role="row"><code role="cell">GET /mcp</code><span role="cell">Session event stream when supported by the client</span></div>
+              <div role="row"><code role="cell">DELETE /mcp</code><span role="cell">Terminate an MCP session</span></div>
+              <div role="row"><code role="cell">GET /health</code><span role="cell">Public service health and transport metadata</span></div>
+              <div role="row"><code role="cell">GET /install.json</code><span role="cell">Machine-readable connection manifest</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-final">
+          <h2>Connect your client</h2>
+          <p>No account, key, or local process required.</p>
+          <a class="primary-button" href="#quickstart">Open quickstart <span aria-hidden="true">↑</span></a>
+        </section>
+
+        <footer class="docs-footer">
+          <p>Community-built and not affiliated with or endorsed by Fermah.</p>
+          <div>
+            <a href="https://fermah.xyz/" target="_blank" rel="noreferrer">Official Fermah site</a>
+            <a href="https://docs.fermah.xyz/" target="_blank" rel="noreferrer">Official Fermah docs</a>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
