@@ -11,7 +11,7 @@ WorkingDirectory=/home/ubuntu/fermah-mcp
 Environment=NODE_ENV=production
 Environment=PORT=8834
 Environment=PUBLIC_BASE_URL=https://fermah.gogettest.online
-ExecStart=/usr/bin/node /home/ubuntu/fermah-mcp/server/index.js
+ExecStart=/home/ubuntu/.local/bin/node /home/ubuntu/fermah-mcp/server/index.js
 Restart=on-failure
 RestartSec=5
 TimeoutStopSec=15
